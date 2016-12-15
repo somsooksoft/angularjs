@@ -7,23 +7,24 @@
     </head>
     <body>
         <div ng-controller="TodoController">
+            {{message}} 
             <hello-directive></hello-directive>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.min.js"></script>
         <script>
-            var app = angular.module('TodoApp',[]);
-            app.controller("TodoController",function($scope,$http){
-                
-            });
-            app.directive('helloDirective',function(){
-                return {
-                    restrict:'EA',
-                    template:'<h1>Hello Directive</h1>',
-                    link:function(scope,ele,attr){
-                        
+                var app = angular.module('TodoApp', []);
+                app.controller("TodoController", function ($scope, $http) {
+                    $scope.message = "Hello AngularJs";
+                });
+                app.directive('helloDirective', function () {
+                    return {
+                        restrict: 'EA',
+                        template: '<h1>Hello Directive</h1>',
+                        link: function (scope, ele, attr) {
+
+                        }
                     }
-                }
-            })
+                })
         </script>
     </body>
 </html>
